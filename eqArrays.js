@@ -22,13 +22,15 @@ const assertEqual = function(actual, expected) {
 // alternatively, we can set the result to true and turn it to false on the
 // first occurance of unmatch
 const eqArrays = (actual, expected) => {
-  let eq = actual.length === expected.length;
+  if (actual.length !== expected.length) {
+    return false;
+  }
   for (let i in actual) {
     if (actual[i] !== expected[i]) {
-      eq = false;
+      return false;
     }
   }
-  return eq;
+  return true;
 };
 
 
