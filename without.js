@@ -43,3 +43,8 @@ assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
 assertArraysEqual(without([1, 2, 3], []), [1, 2, 3]);
 // remove from empty array
 assertArraysEqual(without([], [1]), []);
+//check for original array
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]);
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
