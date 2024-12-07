@@ -19,7 +19,7 @@ const assertArraysEqual = function(actual, expected) {
 };
 
 const map = (arr, callback) => {
-  let newArr = [];
+  const newArr = [];
   for (let element of arr) {
     newArr.push(callback(element));
   }
