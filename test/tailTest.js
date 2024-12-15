@@ -1,35 +1,31 @@
-const assertEqual = require("../assertEqual");
+const assert = require('chai').assert;
 const tail = require("../tail");
 
 // test cases
-console.log('original array length test');
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3);
+describe('#tail', () => {
+  it(`does not alter the original array`, () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.deepEqual(words, ["Yo Yo", "Lighthouse", "Labs"]);
+  });
 
-console.log('Happy path');
-const result = tail(["Hello", "Lighthouse", "Labs"]); // should return ["Lighthouse", "Labs"]
-actual = result;
-expected = ["Lighthouse", "Labs"];
-assertEqual(actual.length, expected.length);
-for (let i in actual) {
-  assertEqual(actual[i], expected[i]);
-};
+  it("returns ['Lighthouse', 'Labs'] for ['Yo Yo', 'Lighthouse', 'Labs']", () => {
+    const words = ['Yo Yo', 'Lighthouse', 'Labs'];
+    assert.deepEqual(tail(words), ['Lighthouse', 'Labs']);
+  });
 
-console.log('Empty');
-const result2 = tail([]);
-actual = result2;
-expected = [];
-assertEqual(actual.length, expected.length);
-for (let i in actual) {
-  assertEqual(actual[i], expected[i]);
-};
+  it("returns [] for []", () => {
+    const words = [];
+    assert.deepEqual(tail(words), []);
+  });
 
-console.log('One element');
-const result3 = tail(['a']);
-actual = result3;
-expected = [];
-assertEqual(actual.length, expected.length);
-for (let i in actual) {
-  assertEqual(actual[i], expected[i]);
-};
+  it("returns [] for ['Lighthouse']", () => {
+    const words = ['Lighthouse'];
+    assert.deepEqual(tail(words), []);
+  });
+
+  it("returns ['Labs'] for ['Lighthouse', 'Labs']", () => {
+    const words = ['Lighthouse', 'Labs'];
+    assert.deepEqual(tail(words), ['Labs']);
+  });
+});
