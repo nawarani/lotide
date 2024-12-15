@@ -1,13 +1,6 @@
 const assertEqual = require("../assertEqual");
 const tail = require("../tail");
 
-const assertEqualArray = (actual, expected) => {
-  assertEqual(actual.length, expected.length);
-  for (let i in actual) {
-    assertEqual(actual[i], expected[i]);
-  }
-};
-
 // test cases
 console.log('original array length test');
 const words = ["Yo Yo", "Lighthouse", "Labs"];
@@ -16,4 +9,9 @@ assertEqual(words.length, 3);
 
 console.log('New example');
 const result = tail(["Hello", "Lighthouse", "Labs"]); // should return ["Lighthouse", "Labs"]
-assertEqualArray(result, ["Lighthouse", "Labs"]);
+actual = result;
+expected = ["Lighthouse", "Labs"];
+assertEqual(actual.length, expected.length);
+for (let i in actual) {
+  assertEqual(actual[i], expected[i]);
+};
