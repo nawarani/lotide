@@ -1,6 +1,3 @@
-const eqArrays = require("./eqArrays");
-const assertArraysEqual = require("./assertArraysEqual");
-
 const middle = (arr) => {
   // if array is smaller than 3 elements, return empty array
   let len = arr.length;
