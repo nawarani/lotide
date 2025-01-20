@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@nawarani/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "Lodash clone made for learning purposes",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/nawarani/lotide.git"
   },
-  "author": "",
+  "author": "Anika Nawar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nawarani/lotide/issues"

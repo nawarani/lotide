@@ -37,4 +37,4 @@ module.exports = {
   reverse,
   takeUntil,
   without
-}
+};
